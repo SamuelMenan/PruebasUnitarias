@@ -1,17 +1,48 @@
+import tsParser from "@typescript-eslint/parser";
+
 export default [
-  // Reglas base
+  // Ignorar artefactos de build y otras salidas
   {
-    files: ["**/*.{js,ts,jsx,tsx}"],
+    ignores: ["dist/**", "coverage/**", "tailwind.config.ts"],
+  },
+  // Reglas base para JS/JSX (parser por defecto)
+  {
+    files: ["**/*.{js,jsx}"],
     languageOptions: {
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        project: "./tsconfig.json",
       },
     },
     rules: {
-      // ejemplo: ajustar según preferencias
       "no-unused-vars": "warn",
+    },
+  },
+  // Reglas para TS/TSX con parser de TypeScript y proyecto
+  {
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        project: "./tsconfig.json",
+        tsconfigRootDir: process.cwd(),
+      },
+    },
+    rules: {
+      "no-unused-vars": "warn",
+    },
+  },
+  // Config específica para tailwind.config.ts (sin type-aware project)
+  {
+    files: ["tailwind.config.ts"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+      },
     },
   },
   // Soporte para archivos de configuración CommonJS
