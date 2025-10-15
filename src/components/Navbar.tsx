@@ -34,14 +34,7 @@ const Navbar: React.FC = () => {
           <span>UCC : Prácticas Desarrollo Multimedia</span>
         </div>
 
-        {/* Centro: navegación */}
-        <nav className="hidden md:flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200">
-          <Link to="/contador" className="hover:underline">Contador</Link>
-          <Link to="/conversor" className="hover:underline">Conversor</Link>
-          <Link to="/tareas" className="hover:underline">Tareas</Link>
-          <Link to="/tablas" className="hover:underline">Tablas</Link>
-          <Link to="/validar" className="hover:underline">Validar</Link>
-        </nav>
+  
 
         {/* Lado derecho: botón de tema */}
         <div className="flex items-center gap-2">
