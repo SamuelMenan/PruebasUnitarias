@@ -11,7 +11,12 @@ const items: SidebarItem[] = [
   { label: "Responsive Layouts", route: "/layouts" },
   { label: "Text-to-Speech", route: "/tts" },
   { label: "Figuras Geometricas", route: "/three_2" },
+  { label: "Reloj Digital", route: "/clock" },
+  { label: "Contador Regresivo", route: "/countdown" },
+  { label: "Selector de Colores", route: "/color" },
+  { label: "Buscador en Lista", route: "/search" },
 ];
+
 
 export default function Sidebar() {
   return (
