@@ -27,18 +27,5 @@ describe("Navbar - Renderizado", () => {
     );
     expect(screen.getByRole("button", { name: /Tema/i })).toBeInTheDocument();
   });
-
-  test("muestra enlaces de navegación a nuevas rutas", () => {
-    render(
-      <MemoryRouter>
-        <Navbar />
-      </MemoryRouter>
-    );
-    expect(screen.getByRole('link', { name: /Contador/i })).toHaveAttribute('href', '/contador');
-    expect(screen.getByRole('link', { name: /Conversor/i })).toHaveAttribute('href', '/conversor');
-    expect(screen.getByRole('link', { name: /Tareas/i })).toHaveAttribute('href', '/tareas');
-    expect(screen.getByRole('link', { name: /Tablas/i })).toHaveAttribute('href', '/tablas');
-    expect(screen.getByRole('link', { name: /Validar/i })).toHaveAttribute('href', '/validar');
-  });
 });
 

@@ -1,6 +1,5 @@
 // src/components/Navbar.tsx
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   // Inicializa el tema al cargar
